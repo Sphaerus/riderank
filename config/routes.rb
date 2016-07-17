@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :rides
+  resources :statistics, only: [] do
+    get "current_month", on: :collection
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,14 @@
+%table
+	%tbody
+		%th= "Day"
+		%th= "Rides sum"
+		%th= "Avg. ride"
+		%th= "Avg. price"
+		%th= "Taxis"
+		- @rides.each do |day, rides|
+			%tr
+				%td= day
+				%td= sum_of_rides_in_km(rides)
+				%td= avg_ride_in_km(rides)
+				%td= avg_price_in_eur(rides)
+				%td= display_taxis(rides)

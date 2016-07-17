@@ -4,10 +4,20 @@ class Ride < ActiveRecord::Base
   has_one :start_address, class_name: "Address"
   belongs_to :taxi
 
-  validates :user_id, :price, :distance, presence: true
+  validates :user_id, :price, :distance, :taxi_id, presence: true
   accepts_nested_attributes_for :start_address, :destination_address
 
   before_validation :set_distance
+
+  def self.current_week
+  	beginning_of_week = Date.today.at_beginning_of_week
+  	self.where("created_at > ?", beginning_of_week)
+  end
+
+  def self.current_month
+  	beginning_of_month = Date.today.at_beginning_of_month
+  	self.where("created_at > ?", beginning_of_month)
+  end
 
   private
 
