@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :rides
+  resources :rides, only: [:create]
   resources :statistics, only: [] do
     get "current_month", on: :collection
+    get "current_week", on: :collection
   end
 
   # Example of regular route:
