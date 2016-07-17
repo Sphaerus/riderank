@@ -28,10 +28,10 @@ module StatisticsHelper
 	private
 
 	def in_km(distance)
-		"#{distance}km"
+		"#{distance.round(3)}km"
 	end
 
 	def in_euro(price)
-		"#{price} EUR"
+		"#{price.round(2)} EUR"
 	end
 end
