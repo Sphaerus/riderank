@@ -1,0 +1,11 @@
+= simple_form_for @ride do |form|
+	= form.simple_fields_for :start_address do |form_sa|
+		= form_sa.input :street
+		= form_sa.input :city
+		= form_sa.input :country
+	= form.simple_fields_for :destination_address do |form_da|
+		= form_da.input :street
+		= form_da.input :city
+		= form_da.input :country
+	= form.input :price
+	= form.submit

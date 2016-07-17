@@ -1,8 +1,6 @@
 class CreateRides < ActiveRecord::Migration
   def change
     create_table :rides do |t|
-      t.integer :start_id
-      t.integer :destination_id
       t.references :user, index: true, foreign_key: true
       t.float :price
       t.float :distance

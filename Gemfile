@@ -31,6 +31,7 @@ gem 'devise'
 #VIEWS
 gem "haml-rails", "~> 0.9"
 gem "simple_form"
+gem 'country_select'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
