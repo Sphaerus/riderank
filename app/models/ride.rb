@@ -2,6 +2,7 @@ class Ride < ActiveRecord::Base
   belongs_to :user
   has_one :destination_address, class_name: "Address"
   has_one :start_address, class_name: "Address"
+  belongs_to :taxi
 
   validates :user_id, :price, :distance, presence: true
   accepts_nested_attributes_for :start_address, :destination_address

@@ -4,4 +4,5 @@
 	= form.simple_fields_for :destination_address do |form_da|
 		= form_da.input :address
 	= form.input :price
+	= form.input :taxi_id, collection: taxi_collection
 	= form.submit

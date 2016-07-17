@@ -23,7 +23,7 @@ class DistanceCalculator
 
 		api_response = get_api_response(uri)
 		if api_response["rows"].first["elements"].first["status"] == "OK"
-			return ["rows"].first["elements"].first["distance"]["value"]
+			return api_response["rows"].first["elements"].first["distance"]["value"]
 		else
 			return api_response["rows"].first["elements"].first["status"]
 		end	
